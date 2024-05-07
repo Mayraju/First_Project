@@ -14,11 +14,11 @@ class First_Rest_API {
 
     @RequestMapping("/printName/{name}/{id}")
     public String printName(@PathVariable String name, @PathVariable int id){
-        String str="";
+        StringBuilder str= new StringBuilder();
         for(int i=0;i<id;i++){
-            str+=name + (i+1);
-            str+="\n";
+            str.append(name).append(i + 1);
+            str.append("\n");
         }
-        return str;
+        return str.toString();
     }
 }
